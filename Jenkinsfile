@@ -10,7 +10,7 @@ pipeline{
             steps{
                 sh "npm run build"
             }
-            stage("Build Docker Image & Push"){
+        stage("Build Docker Image & Push"){
             steps{
                 sh 'docker build -t oseghale1/tourApp:""$GIT_COMMIT"" .'
                 sh 'docker push oseghale1/tourApp:""$GIT_COMMIT""'
