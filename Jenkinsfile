@@ -9,7 +9,7 @@ pipeline{
         }
         stage("Run Build"){
             steps{
-                sh "npm run build"
+                sh "yarn run build"
             }
         }
         stage("Build Docker Image & Push"){
