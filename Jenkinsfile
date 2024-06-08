@@ -4,12 +4,12 @@ pipeline{
     stages{
         stage("Installing Dependencies"){
             steps{
+                sh 'export CI=false'
                 sh "npm install"
             }
         }
         stage("Run Build"){
             steps{
-                sh 'export CI=false'
                 sh "npm upgrade caniuse-lite browserslist"
                 sh "npm run build"
             }
